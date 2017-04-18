@@ -1,0 +1,7 @@
+{
+  "presets": [
+    ["env", {"modules": false, "useBuiltIns": true}],
+    "react"
+  ],
+  "plugins": ["react-hot-loader/babel", "lodash", "transform-react-jsx-source"]
+}

@@ -1,0 +1,27 @@
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+@import "~bootstrap-sass/assets/stylesheets/bootstrap";
+
+.board {
+
+  border-collapse: collapse;
+  float: none;
+  margin: 0 auto;
+}
+
+.board, .board_row, .board_col
+{
+  //border: 1px solid black;
+
+}
+
+.board_col
+{
+  cursor: pointer;
+  width: 100px;
+  height: 100px;
+  text-align: center;
+}
+
+.board_col_checked {
+  background-color: deepskyblue;
+}

@@ -1,0 +1,48 @@
+{
+  "name": "flapper_bingo",
+  "version": "1.0.0",
+  "description": "Flapper Bingo for the Examenstunt van CSVVG",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack-dev-server --port 80 --host 0.0.0.0 --history-api-fallback --inline"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://stash.goscripting.com/event/main-webapp.git"
+  },
+  "author": "Jord Nijhuis <jord@goscripting.nl>",
+  "license": "ISC",
+  "dependencies": {
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
+    "babel-plugin-lodash": "^3.2.11",
+    "babel-plugin-transform-react-jsx-source": "^6.22.0",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-env": "^1.1.4",
+    "babel-preset-react": "^6.16.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-sass": "^3.3.7",
+    "clean-webpack-plugin": "^0.1.15",
+    "compression-webpack-plugin": "^0.3.2",
+    "css-loader": "^0.23.1",
+    "draft-js": "^0.10.0",
+    "file-loader": "^0.8.5",
+    "html-webpack-plugin": "^2.16.1",
+    "moment": "^2.17.1",
+    "node-sass": "^3.8.0",
+    "react": "^15.4.1",
+    "react-bootstrap": "^0.30.7",
+    "react-dom": "^15.4.1",
+    "react-hot-loader": "^3.0.0-beta.6",
+    "react-redux": "^5.0.2",
+    "redux": "^3.6.0",
+    "sass-loader": "^4.0.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^2.2.1",
+    "webpack-config": "^6.2.1",
+    "webpack-dev-server": "^1.14.1"
+  }
+}
