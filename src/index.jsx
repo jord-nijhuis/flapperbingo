@@ -1,8 +1,7 @@
-import 'babel-polyfill'
-
 //Stylesheets
 import './Style/style.scss'
 
+//Dependencies
 import React from 'react';
 import {render} from 'react-dom';
 import { Provider } from 'react-redux'
@@ -12,7 +11,7 @@ import { createStore } from 'redux'
 import {App} from './Components/app';
 import bingoReducers from './Reducers/index'
 
-console.log("FlapperBingo v" + VERSION + " (build environment: " + ENV + ", time of build: " + BUILD_TIME + ")");
+console.log("Flapperbingo v" + VERSION + " (build environment: " + ENV + ", time of build: " + BUILD_TIME + ")");
 
 let store = createStore(bingoReducers);
 

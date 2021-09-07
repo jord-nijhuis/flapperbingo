@@ -1,24 +1,15 @@
 const path = require('path');
-const WebpackConfig = require('webpack-config');
 const webpack = require('webpack');
+const { merge } = require('webpack-merge');
+const common = require('./webpack.common')
 
 const ROOT = path.join(__dirname, '..');
 
 //noinspection JSUnresolvedFunction
-module.exports =  new WebpackConfig.Config().extend(path.join(ROOT, 'config' , 'webpack.common.js')).merge({
-
-    devtool: 'source-map',
-
-    entry: {
-        'hot':
-            [
-                'webpack/hot/only-dev-server',
-                'webpack-dev-server/client?http://localhost:80',
-                'react-hot-loader/patch'
-            ]
+module.exports =  merge(common, {
+    mode: 'development',
+    devtool: false,
+    devServer: {
+        static: './dist',
     },
-
-    plugins: [
-        new webpack.HotModuleReplacementPlugin()
-    ]
 });

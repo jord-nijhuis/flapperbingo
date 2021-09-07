@@ -7,7 +7,7 @@ const numbers = (state = [], action) => {
             return [
                 ...state,
                 action.number
-            ]
+            ];
 
         default:
             return state;

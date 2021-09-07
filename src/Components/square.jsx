@@ -1,6 +1,11 @@
 import React from 'react';
 import {connect} from 'react-redux'
 
+/**
+ * A square is one small rectangle, it contains relatively little logic. The only thing is does is turn blue when either
+ * 1) The user is in admin mode and the number in this square has been rolled
+ * 2) The user is not in admin mode and he clicked on the square
+ */
 class Square extends React.Component {
 
     constructor(props) {

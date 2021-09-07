@@ -1,5 +1,5 @@
 import React from 'react';
-import {Grid, Row, Col, Label} from "react-bootstrap"
+import {Container, Row, Col, Badge} from "react-bootstrap"
 import {Game} from "./game"
 
 class App extends React.Component {
@@ -11,7 +11,7 @@ class App extends React.Component {
         this.state = {admin: false}
     }
 
-    componentWillMount()
+    componentDidMount()
     {
         document.addEventListener("keydown", this.onKeyDown.bind(this));
     }
@@ -23,22 +23,27 @@ class App extends React.Component {
 
     render() {
 
-        const label = this.state.admin ? <Label>Admin</Label> : "";
+        const label = this.state.admin ? <Badge bg="primary">Admin</Badge> : "";
         return <div>
-            <Grid>
+            <Container>
                 <Row>
                     <Col md={12}><h1>Flapperbingo <small>LSD CSVVG Lariks {label}</small></h1></Col>
                 </Row>
 
                 <Row>
                     <Col md={12}>
-                        <p>
-                            Welkom bij de allereerste Flapperbingo van CSVVG Lariks! Via de intercom zullen de getallen
-                            omgeroepen worden. Als het getal op je kaart staat, klik dan één keer op het getal. Op het
-                            moment dat je hele kaart ingekleurd is, moet je zo snel mogelijk <strong>met de code</strong>
-                            &nbsp; naar de servicebalie rennen. De bingokaart hoef je niet mee te nemen, die hebben we
-                            hier ook liggen. Veel plezier!
+                        <p className="lead" style={{textAlign: 'justify'}}>
+                            Welkom bij de allereerste Flapperbingo&trade; van CSVVG Lariks! Via de intercom zullen
+                            de getallen&trade; omgeroepen worden. Als een van deze getallen op je kaart staat, klik dan
+                            één keer op het getal om hem in te kleuren. Op het moment dat je een ingekleurde rij hebt
+                            (horizontaal of verticaal), moet je zo snel mogelijk <strong>met de code</strong> naar de
+                            servicebalie&trade; rennen. De eerste vier deelnemers winnen te gekke authentieke
+                            handgemaakte Flapper-accessories&trade;! Moge de beste Flapper&trade; winnen!
+                        </p>
 
+                        <p>
+                            <strong>PS:</strong> Mocht gij met een
+                            valsche kaart aankomen, dal zullen wij u bestraffen doormiddel van duivelsch gezang.
                         </p>
                     </Col>
                 </Row>
@@ -47,13 +52,17 @@ class App extends React.Component {
                     <Game width={5} height={5} admin={this.state.admin}/>
                 </Row>
 
-            </Grid>
+            </Container>
         </div>;
     }
 
+    /**
+     * When the user presses CTL + M, activate the admin mode
+     * @param event
+     */
     onKeyDown(event)
     {
-        if(event.ctrlKey && event.key == 'm')
+        if(event.ctrlKey && event.key === 'm')
         {
             this.setState({admin: !this.state.admin})
         }

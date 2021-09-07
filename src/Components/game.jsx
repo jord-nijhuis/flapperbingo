@@ -1,8 +1,11 @@
 import React from 'react';
-import {Grid, Row, Col} from "react-bootstrap"
+import {Container, Row, Col} from "react-bootstrap"
 import {Board} from "./board"
 import Roller from "./roller"
 
+/**
+ * The game contains the main logic: It houses both the board and the seed, as well as the admin mode.
+ */
 class Game extends React.Component {
 
     constructor(props){
@@ -14,6 +17,10 @@ class Game extends React.Component {
         }
     }
 
+    /**
+     * Generates a random seed of four digits.
+     * @returns {string}
+     */
     generateSeed()
     {
         let getRandomInt = function(min, max){
@@ -25,6 +32,10 @@ class Game extends React.Component {
         return getRandomInt(0, 9) + "" + getRandomInt(0, 9) + "" + getRandomInt(0, 9) + "" + getRandomInt(0, 9)
     }
 
+    /**
+     * Changes the seed in the state to the seed in the event
+     * @param e
+     */
     changeSeed(e)
     {
         this.setState({seed: e.target.value})
@@ -36,7 +47,7 @@ class Game extends React.Component {
             this.state.seed;
 
         return <div>
-            <Grid fluid>
+            <Container fluid>
                 <Row>
                     <Col md={12}><h2>Jouw code: {seed}</h2></Col>
                 </Row>
@@ -56,7 +67,7 @@ class Game extends React.Component {
                         />
                     </Col>
                 </Row>
-            </Grid>
+            </Container>
         </div>;
     }
 }
